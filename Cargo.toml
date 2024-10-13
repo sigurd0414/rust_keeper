@@ -6,3 +6,4 @@ edition = "2024"
 [dependencies]
 bevy = "0.14"
 rand = "0.85"
+quinn = "0.11.5"
