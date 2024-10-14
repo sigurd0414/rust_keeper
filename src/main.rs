@@ -12,6 +12,10 @@ fn add_people(mut commands: Commands) {
     commands.spawn((Person, Name("Zayna Nieves".to_string())));
 }
 
+fn hello_world() {
+    println!("hello world!");
+}
+
 fn main() {
     App::new()
         .add_systems(Startup, add_people)
