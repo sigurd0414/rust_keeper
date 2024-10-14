@@ -1,6 +1,8 @@
 // src/core_logic/player.rs
 
 use bevy::prelude::*;
+use bevy::app::App;
+use bevy::DefaultPlugins;
 
 // 玩家組件，包含玩家的基本屬性和狀態
 #[derive(Component)]

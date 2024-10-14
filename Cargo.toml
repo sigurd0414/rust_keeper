@@ -1,9 +1,9 @@
 [package]
 name = "core_keeper_clone"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
 bevy = "0.14"
-rand = "0.85"
-quinn = "0.11.5"
+tonic = "0.12.3"
+surrealdb = "2.0.4"
