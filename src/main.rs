@@ -1,11 +1,9 @@
-// src/main.rs
-
 use bevy::prelude::*;
 
 #[derive(Component)]
 struct Person;
 #[derive(Component)]
-struct Name(String);
+struct Name(pub String);
 
 fn main() {
     App::new()
