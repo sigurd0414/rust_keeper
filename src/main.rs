@@ -3,7 +3,7 @@ use bevy::prelude::*;
 #[derive(Component)]
 struct Person;
 #[derive(Component)]
-struct Name(pub String);
+struct Name;
 
 fn main() {
     App::new()
