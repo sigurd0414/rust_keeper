@@ -1,8 +1,8 @@
 // src/core_logic/player.rs
 
 use bevy::prelude::*;
-use bevy::app::App;
-use bevy::DefaultPlugins;
+
+
 
 // 玩家組件，包含玩家的基本屬性和狀態
 #[derive(Component)]
@@ -68,8 +68,8 @@ struct ResourceNode;
 pub struct PlayerBehaviorPlugin;
 
 impl Plugin for PlayerBehaviorPlugin {
-    fn build(&self, app: &mut App) {
-        app.add_startup_system(setup_players)
+    fn build(&self, app: &mut AppBuilder) {
+        app.add_plugins(DefaultPlugins).add_startup_system(setup_players)
             .add_system(player_movement_system)
             .add_system(player_collect_resource_system);
     }
