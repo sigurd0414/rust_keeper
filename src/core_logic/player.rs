@@ -68,7 +68,7 @@ struct ResourceNode;
 pub struct PlayerBehaviorPlugin;
 
 impl Plugin for PlayerBehaviorPlugin {
-    fn build(&self, app: &mut AppBuilder) {
+    fn build(&self, app: &mut App) {
         app.add_plugins(DefaultPlugins).add_startup_system(setup_players)
             .add_system(player_movement_system)
             .add_system(player_collect_resource_system);
@@ -76,11 +76,11 @@ impl Plugin for PlayerBehaviorPlugin {
 }
 
 // 初始化玩家
-fn setup_players(mut commands: Commands, mut materials: ResMut<Assets<ColorMaterial>>) {
+fn setup_players(mut commands: Commands, mut materials: ResMut<Assets<Color>>) {
     // 初始化玩家
     commands.spawn_bundle(SpriteBundle {
-        material: materials.add(Color::rgb(0.5, 0.5, 1.0).into()),
-        sprite: Sprite::new(Vec2::new(50.0, 50.0)),
+        texture: Default::default(),
+        sprite: Sprite { custom_size: Some(Vec2::new(50.0, 50.0)), ..Default::default() },
         ..Default::default()
     })
     .insert(Player {
@@ -92,8 +92,8 @@ fn setup_players(mut commands: Commands, mut materials: ResMut<Assets<ColorMater
     
     // 初始化資源節點
     commands.spawn_bundle(SpriteBundle {
-        material: materials.add(Color::rgb(1.0, 0.0, 0.0).into()),
-        sprite: Sprite::new(Vec2::new(30.0, 30.0)),
+        texture: Default::default(),
+        sprite: Sprite { custom_size: Some(Vec2::new(30.0, 30.0)), ..Default::default() },
         transform: Transform {
             translation: Vec3::new(3.0, 0.0, 3.0),
             ..Default::default()
