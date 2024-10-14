@@ -14,7 +14,7 @@ fn main() {
         .run();
 }
 
-fn hello_world_system() {
+fn hello_world() {
     println!("Hello, world!");
 }
 
