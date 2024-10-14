@@ -21,9 +21,9 @@ fn hello_world_system() {
 }
 
 fn add_people(mut commands: Commands) {
-    commands.spawn().insert(Person).insert(Name("Alice".to_string()));
-    commands.spawn().insert(Person).insert(Name("Bob".to_string()));
-    commands.spawn().insert(Person).insert(Name("Charlie".to_string()));
+    commands.spawn((Person, Name("Elaina Proctor".to_string())));
+    commands.spawn((Person, Name("Renzo Hume".to_string())));
+    commands.spawn((Person, Name("Zayna Nieves".to_string())));
 }
 
 fn greet_people(query: Query<&Name, With<Person>>) {
